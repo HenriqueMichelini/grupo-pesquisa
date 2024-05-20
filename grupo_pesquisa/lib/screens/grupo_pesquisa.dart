@@ -1,15 +1,29 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:grupo_pesquisa/widgets/custom_app_bar.dart';
 import 'package:grupo_pesquisa/theme/colors_theme.dart';
-import 'package:grupo_pesquisa/widgets/researchers_card.dart';
+import 'package:grupo_pesquisa/widgets/researcher_card.dart';
 
 final List<Widget> carouselImages = [
   Image.asset('src/carousel-1.jpg', fit: BoxFit.cover),
   Image.asset('src/carousel-2.jpg', fit: BoxFit.cover),
   Image.asset('src/carousel-3.jpg', fit: BoxFit.cover),
 ];
+
+CarouselSlider carouselSlider = CarouselSlider(
+  options: CarouselOptions(height: 400.0),
+  items: carouselImages.map((image) {
+    return Builder(
+      builder: (BuildContext context) {
+        return Container(
+          width: MediaQuery.of(context).size.width,
+          margin: const EdgeInsets.symmetric(horizontal: 5.0),
+          child: image,
+        );
+      },
+    );
+  }).toList(),
+);
 
 class GrupoPesquisa extends StatelessWidget {
   const GrupoPesquisa({super.key});
@@ -23,20 +37,7 @@ class GrupoPesquisa extends StatelessWidget {
         children: [
           Column(
             children: [
-              CarouselSlider(
-                options: CarouselOptions(height: 400.0),
-                items: carouselImages.map((image) {
-                  return Builder(
-                    builder: (BuildContext context) {
-                      return Container(
-                        width: MediaQuery.of(context).size.width,
-                        margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: image,
-                      );
-                    },
-                  );
-                }).toList(),
-              ),
+              carouselSlider,
               const SizedBox(height: 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +72,7 @@ class GrupoPesquisa extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: 500),
                 child: Column(
                   children: [
-                    ResearchersCard(
+                    HeadResearchersCard(
                       src: 'src/Screenshot_1.jpg',
                       name: 'DAVI',
                       title: 'Titulo master',
@@ -79,7 +80,7 @@ class GrupoPesquisa extends StatelessWidget {
                       isImageAtStart: true,
                     ),
                     SizedBox(height: 50),
-                    ResearchersCard(
+                    HeadResearchersCard(
                       src: 'src/Screenshot_1.jpg',
                       name: 'DAVI',
                       title: 'Titulo master',
@@ -115,6 +116,46 @@ class GrupoPesquisa extends StatelessWidget {
                       endIndent: 200,
                       indent: 100,
                     ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 100),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    children: [
+                      ResearchersCard(
+                        name: 'Henrique',
+                        title:
+                            'Estudante de Sistemas de Informação (7° período)',
+                        description: 'asdasdasd',
+                      ),
+                      SizedBox(height: 50),
+                      ResearchersCard(
+                        name: 'Henrique',
+                        title:
+                            'Estudante de Sistemas de Informação (7° período)',
+                        description: 'asdasdasd',
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: 50),
+                  Column(
+                    children: [
+                      ResearchersCard(
+                        name: 'Henrique',
+                        title: 'Estudante de',
+                        description: 'asdasdasd',
+                      ),
+                      SizedBox(height: 50),
+                      ResearchersCard(
+                        name: 'Henrique',
+                        title:
+                            'Estudante de Sistemas de Informação (7° período)Estudante de Sistemas de Informação (7° período)',
+                        description: 'asdasdasd',
+                      ),
+                    ],
                   ),
                 ],
               ),
