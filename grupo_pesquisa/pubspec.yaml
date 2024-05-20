@@ -69,6 +69,7 @@ flutter:
     - src/carousel-1.jpg
     - src/carousel-2.jpg
     - src/carousel-3.jpg
+    - src/Screenshot_1.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
