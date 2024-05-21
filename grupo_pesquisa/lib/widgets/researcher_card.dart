@@ -1,10 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grupo_pesquisa/theme/colors_theme.dart';
 
-double headResearchersCardWidth = researchersCardWidth * 2 + cardColumnSizedBox;
-double researchersCardWidth = 400;
-double cardColumnSizedBox = 50;
-
 class HeadResearchersCard extends StatelessWidget {
   const HeadResearchersCard({
     super.key,
@@ -20,13 +16,15 @@ class HeadResearchersCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width * 0.5;
+
     return Container(
       padding: const EdgeInsets.all(12.5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(5.0),
         border: Border.all(width: 0.5, color: Colors.black.withOpacity(0.3)),
       ),
-      width: headResearchersCardWidth,
+      width: cardWidth,
       child: isImageAtStart
           ? Row(
               children: [
@@ -127,6 +125,8 @@ class ResearchersCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double cardWidth = MediaQuery.of(context).size.width * 0.225;
+
     return Container(
       padding: const EdgeInsets.all(12.5),
       decoration: BoxDecoration(
@@ -134,7 +134,7 @@ class ResearchersCard extends StatelessWidget {
         border: Border.all(width: 0.5, color: Colors.black.withOpacity(0.3)),
       ),
       height: 200,
-      width: researchersCardWidth,
+      width: cardWidth,
       child: Row(
         children: [
           Expanded(

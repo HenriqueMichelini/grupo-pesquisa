@@ -68,27 +68,25 @@ class GrupoPesquisa extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 100),
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 500),
-                child: Column(
-                  children: [
-                    HeadResearchersCard(
-                      src: 'src/Screenshot_1.jpg',
-                      name: 'DAVI',
-                      title: 'Titulo master',
-                      description: 'Descrição muito interessante.',
-                      isImageAtStart: true,
-                    ),
-                    SizedBox(height: 50),
-                    HeadResearchersCard(
-                      src: 'src/Screenshot_1.jpg',
-                      name: 'DAVI',
-                      title: 'Titulo master',
-                      description: 'Descrição muito interessante.',
-                      isImageAtStart: false,
-                    )
-                  ],
-                ),
+              //  HeadResearchersCard area
+              const Column(
+                children: [
+                  HeadResearchersCard(
+                    src: 'src/Screenshot_1.jpg',
+                    name: 'DAVI',
+                    title: 'Titulo master',
+                    description: 'Descrição muito interessante.',
+                    isImageAtStart: true,
+                  ),
+                  SizedBox(height: 50),
+                  HeadResearchersCard(
+                    src: 'src/Screenshot_1.jpg',
+                    name: 'DAVI',
+                    title: 'Titulo master',
+                    description: 'Descrição muito interessante.',
+                    isImageAtStart: false,
+                  )
+                ],
               ),
               const SizedBox(height: 100),
               Row(
@@ -120,10 +118,10 @@ class GrupoPesquisa extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 100),
-              const Row(
+              Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Column(
+                  const Column(
                     children: [
                       ResearchersCard(
                         name: 'Henrique',
@@ -140,8 +138,8 @@ class GrupoPesquisa extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(width: 50),
-                  Column(
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                  const Column(
                     children: [
                       ResearchersCard(
                         name: 'Henrique',
